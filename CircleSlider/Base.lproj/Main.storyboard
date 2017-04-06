@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CircleSlider" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,60 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="xY9-z4-Rkf">
+                                <rect key="frame" x="14" y="420" width="342" height="31"/>
+                                <connections>
+                                    <action selector="trackWWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="6ZW-sm-rnF"/>
+                                </connections>
+                            </slider>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="clH-sS-3hl">
+                                <rect key="frame" x="18" y="360" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switch1WithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="8EH-Ll-gpY"/>
+                                </connections>
+                            </switch>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="6.2800000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="vpE-uA-eVX">
+                                <rect key="frame" x="14" y="584" width="342" height="31"/>
+                                <connections>
+                                    <action selector="botChangedWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="tUP-fe-OmI"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="6.2800000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="uKa-aN-YNS">
+                                <rect key="frame" x="14" y="532" width="342" height="31"/>
+                                <connections>
+                                    <action selector="topChangedWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="7Fy-vR-xru"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="f1a-4Y-anC">
+                                <rect key="frame" x="14" y="475" width="342" height="31"/>
+                                <connections>
+                                    <action selector="thumbWidthWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="64c-PZ-yOA"/>
+                                </connections>
+                            </slider>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xY9-z4-Rkf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1xw-Fy-Zet"/>
+                            <constraint firstItem="uKa-aN-YNS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="57G-XK-8eu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uKa-aN-YNS" secondAttribute="trailing" constant="5" id="7qN-l4-IzN"/>
+                            <constraint firstItem="f1a-4Y-anC" firstAttribute="top" secondItem="xY9-z4-Rkf" secondAttribute="bottom" constant="25" id="8iw-j7-Hhd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f1a-4Y-anC" secondAttribute="trailing" constant="5" id="Bbk-Xd-d9M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vpE-uA-eVX" secondAttribute="trailing" constant="5" id="Bqg-9E-xvs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xY9-z4-Rkf" secondAttribute="trailing" constant="5" id="EN5-4h-VNx"/>
+                            <constraint firstItem="vpE-uA-eVX" firstAttribute="top" secondItem="uKa-aN-YNS" secondAttribute="bottom" constant="22" id="Mh6-mU-uN4"/>
+                            <constraint firstItem="clH-sS-3hl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="2" id="RwM-t9-nph"/>
+                            <constraint firstItem="uKa-aN-YNS" firstAttribute="top" secondItem="f1a-4Y-anC" secondAttribute="bottom" constant="27" id="SlA-FR-8FZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vpE-uA-eVX" secondAttribute="bottom" constant="56" id="cT0-wX-QWt"/>
+                            <constraint firstItem="f1a-4Y-anC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eD3-Fu-jCT"/>
+                            <constraint firstItem="vpE-uA-eVX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mXm-Bx-1o3"/>
+                            <constraint firstItem="xY9-z4-Rkf" firstAttribute="top" secondItem="clH-sS-3hl" secondAttribute="bottom" constant="29" id="vUZ-dO-vck"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
